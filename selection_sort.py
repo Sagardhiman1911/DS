@@ -4,7 +4,8 @@ numbers = [1, 3, 2, 4, 7, 5, 2]
 def is_sorted(values):
     for index in range(len(values) - 1):
         if values[index] > values[index + 1]:
-            return True
+            return False
+    return True
 
 
 def selection_sort(values):
@@ -16,7 +17,7 @@ def selection_sort(values):
         min_idx = i
         # find the min element in remaining array
         for j in range(i+1, len(values)):
-            if values[i] > values[j]:
+            if values[min_idx] > values[j]:
                 min_idx = j
         # swap the found minimum with the first element
         values[i], values[min_idx] = values[min_idx], values[i]
